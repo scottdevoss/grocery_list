@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get "/add_item", to: "grocery#index"
   get "/grocery_list", to: "grocery#index"
   post "/grocery_list", to: "grocery#create"
+  delete "/grocery_list/:id", to: "grocery#destroy"
 end

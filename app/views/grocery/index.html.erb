@@ -1,6 +1,6 @@
 <h1>Grocery List</h1>
 
-<%= form_with url: "/grocery_list", method: :post do |form| %>
+<%= form_with url: "/grocery_list", method: :post, local: :true do |form| %>
   <%= form.label :item, "Item:" %>
   <%= form.text_field :item %>
   <%= form.submit "Add" %>
@@ -8,4 +8,5 @@
 
 <% @items.each do |item| %>
   <li><%= item.name %></li>
+  <%= button_to "Delete #{item.name}", "/grocery_list/#{item.id}", method: :delete %>
 <% end %>

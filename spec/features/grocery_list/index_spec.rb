@@ -16,17 +16,18 @@ RSpec.describe "Grocery List" do
     end
 
     it "Deletes an item from the list" do
-      visit "/add_item"
+      item1 = Item.create!(name: "Onions")
 
-      fill_in :item, with: "Onions"
-
-      click_button "Add"
+      visit "/grocery_list"
 
       expect(page).to have_content("Onions")
+
       expect(page).to have_button("Delete")
 
-      click_button "Delete"
-
+      click_button "Delete Onions"
+      
+      expect(current_path).to eq("/grocery_list")
+      
       expect(page).to_not have_content("Onions")
     end
   end
