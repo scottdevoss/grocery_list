@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  get "/add_item", to: "grocery#index"
   get "/grocery_list", to: "grocery#index"
   post "/grocery_list", to: "grocery#create"
   delete "/grocery_list/:id", to: "grocery#destroy"
+  get "/update/:id", to: "grocery#edit"
+  patch "/update/:id", to: "grocery#update"
 end

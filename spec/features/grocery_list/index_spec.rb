@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "Grocery List" do
   describe "Creating a grocery list" do
     it "Adds items to a grocery list" do
-      visit "/add_item"
+      visit "/grocery_list"
       
       expect(page).to have_content("Grocery List")
 
@@ -32,17 +32,18 @@ RSpec.describe "Grocery List" do
     end
 
     it "Updates an item from the list" do
-      item1 = Item.create!(name: "Onions")
+      item1 = Item.create!(name: "Oranges")
+      item2 = Item.create!(name: "Oreos")
 
       visit "/grocery_list"
 
-      expect(page).to have_content("Onions")
+      expect(page).to have_content("Oranges")
 
-      expect(page).to have_button("Update Onions")
+      expect(page).to have_button("Update Oranges")
 
-      click_button "Update Onions"
+      click_button "Update Oranges"
 
-      expect(current_path).to eq("/update")
+      expect(current_path).to eq("/update/1")
 
       fill_in :name, with: "Peaches"
 
@@ -51,7 +52,7 @@ RSpec.describe "Grocery List" do
       expect(current_path).to eq("/grocery_list")
 
       expect(page).to have_content("Peaches")
-      expect(page).to_not have_content("Onions")
+      expect(page).to_not have_content("Oranges")
     end
   end
 end
