@@ -1,1 +1,11 @@
 <h1>Grocery List</h1>
+
+<%= form_with url: "/grocery_list", method: :post do |form| %>
+  <%= form.label :item, "Item:" %>
+  <%= form.text_field :item %>
+  <%= form.submit "Add" %>
+<% end %>
+
+<% @items.each do |item| %>
+  <%= item.name %>
+<% end %>
