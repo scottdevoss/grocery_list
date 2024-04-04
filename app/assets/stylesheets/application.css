@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+ /* app/assets/stylesheets/styles.css */
+ html {
+  background-color: #4b9561; /* Specify your desired background color */
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  padding: 0;
+  background-color: #4b9561;
+  text-align: center; 
+}
+
+h1 {
+  color: rgb(45, 45, 120);
+}
+
+h2 {
+  color: rgb(45, 45, 120);
+}
+
+h3 {
+  color: rgb(45, 45, 120);
+}
+
+p {
+  font-size: 26px;
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(45, 45, 120);
+}
+
+
+
+
+
+
+
+

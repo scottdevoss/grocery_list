@@ -1,13 +1,13 @@
 <h1>Grocery List</h1>
 
 <%= form_with url: "/grocery_list", method: :post, local: :true do |form| %>
-  <%= form.label :item, "Item:" %>
+  <h2><%= form.label :item, "Item:" %></h2>
   <%= form.text_field :item %>
-  <%= form.submit "Add" %>
+  <p><%= form.submit "Add" %></p>
 <% end %><br>
 
 <% @items.each do |item| %>
-  <li><%= item.name %></li>
+  <h3><li><%= item.name %></li></h3>
   <%= button_to "Delete #{item.name}", "/grocery_list/#{item.id}", method: :delete %>
-  <%= button_to "Update #{item.name}", "/update/#{item.id}", method: :get %>
+  <%= button_to "Update #{item.name}", "/update/#{item.id}", method: :get %><br>
 <% end %>

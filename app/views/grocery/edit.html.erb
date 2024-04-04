@@ -1,5 +1,5 @@
 <%= form_with url: "/update/#{@items.id}", method: :patch, local: :true do |form|  %>
-  <%= form.label :name, "Item:" %>
+  <h2><%= form.label :name, "Item:" %></h2>
   <%= form.text_field :name, value: "#{@items.name}"  %>
   <%= form.submit "Update" %>
 <% end %>
