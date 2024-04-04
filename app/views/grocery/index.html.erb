@@ -4,8 +4,8 @@
   <%= form.label :item, "Item:" %>
   <%= form.text_field :item %>
   <%= form.submit "Add" %>
-<% end %>
+<% end %><br>
 
 <% @items.each do |item| %>
-  <%= item.name %>
+  <li><%= item.name %></li>
 <% end %>
